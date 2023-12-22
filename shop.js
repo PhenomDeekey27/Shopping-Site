@@ -74,6 +74,10 @@ singleProDetails.innerHTML=`
 proDetails.appendChild(singleProDetails)
  let category=product.category;
  GetCategory(category)
+ window.scrollTo({
+    top:0,
+    behavior:"smooth"
+ })
  
 
 
