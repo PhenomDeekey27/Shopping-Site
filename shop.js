@@ -1,24 +1,81 @@
 let product=localStorage.getItem("name");
 const proDetails=document.getElementById("pro-details")
 const productContainer=document.querySelector(".product-container")
-console.log(product)
+
+let finalPro=new Set();
+localStorage.setItem("final",JSON.stringify(finalPro));
+
 
 async function SingleProduct()
 {
-    const response=await fetch(`https://dummyjson.com/products/search?q=${product}`)
+    const response=await fetch(`https://dummyjson.com/products/${product}`)
     const data = await response.json();
-    console.log(data);
-    DisplayProduct(data.products[0])
+  
+   
+    DisplayProduct(data)
+}
+
+async function RandomProducts()
+{
+    const response= await fetch('https://dummyjson.com/products?limit=5&skip=30')
+    const data = await response.json();
+    
+    let productList=[];
+
+
+
+    productList=[...data.products];
+    
+   
+
+   productList.map((products)=>
+   {
+    
+   let product=document.createElement("div");
+  
+    product.className="product"
+    product.innerHTML=  `
+     <img src=${products.thumbnail} alt="pro-1">
+     <div class="desc">
+            <span>${products.brand}</span>
+            <h5>${products.title}</h5>
+            <div class="star">
+            <i class="fa-solid fa-star"></i> <p>${products.rating}</p>
+            </div>
+            <h4>$${products.price}</h4>
+    </div>
+    <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a> `
+    
+        product.onclick=()=>sendName(products.id)
+        product.onclick=()=>DisplayProduct(products)
+        
+    
+         productContainer.appendChild(product)
+         
+         
+   })
+   
+   
+
+}
+if(product!=null){
+    SingleProduct();
+}else
+{
+
+    RandomProducts();
+  
+
 }
 
 
-SingleProduct();
-
 function DisplayProduct(product)
 {
+    productContainer.innerHTML='';
     const proimage=document.createElement("div");
     proimage.className="pro-image"
     proDetails.innerHTML='';
+    
     proimage.innerHTML=`
     <img src=${product.thumbnail} alt="" width="100%" id="MainImg">
    
@@ -58,8 +115,9 @@ singleProDetails.innerHTML=`
 <h2>${product.title}</h2>
 <h2>$${product.price}</h2>
 
-<input type="number" value="1">
-<button class="normal">Add to Cart</button>
+
+<button class="normal cart-btn">Add to Cart</button>
+<button class="normal" onclick='window.location.href="cart.html"'>Go to Cart</button>
 <h4>Product Details</h4>
 <span>${product.description}</span>
 <div class="desc-pro">
@@ -78,15 +136,19 @@ proDetails.appendChild(singleProDetails)
     top:0,
     behavior:"smooth"
  })
- 
+
+ const cartBtn=document.querySelector(".cart-btn");
+ cartBtn.onclick=()=>AddCart(product);
+     
 
 
 }
 
 async function GetCategory(category)
 {
-    const response = await fetch(`https://dummyjson.com/products/category/${category}`);
+    const response = await fetch(`https://dummyjson.com/products/category/${category}?limit=5`);
     const data= await response.json();
+   
     DisplayCategory(data.products)
    
 }
@@ -116,7 +178,38 @@ function DisplayCategory(datas)
     
        
         product.onclick=()=>DisplayProduct(products)
-         productContainer.appendChild(product)
+        productContainer.appendChild(product)
+        
+
    })
 }
+
+
+
+function AddCart(product)
+{
+   
+  
+
+    finalPro.add(product);
+ 
+    console.log(finalPro);
+    let cartItems=localStorage.getItem("cart");
+    let data=[];
+    if(cartItems)
+    {
+        values=JSON.parse(localStorage.getItem("cart"));
+    }
+    finalPro.forEach((keys)=>
+    {
+        data.push(keys)
+       
+    })
+    localStorage.setItem("cart",JSON.stringify(data))
+    
+    
+}
+
+
+
 

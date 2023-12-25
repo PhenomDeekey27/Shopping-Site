@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,700;0,800;1,100;1,200;1,500;1,600;1,700;1,800&display=swap");
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0px;
+    padding: 0px;
+    
+  }
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background-color: #e3e6f3;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+  }
+
+  #Navlinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    padding: 10px;
+  }
+  #Navlinks li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+  }
+  #Navlinks li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    transition: 0.3s ease;
+  }
+
+  #Navlinks li a:hover,
+#Navlinks li a.active {
+  color: tomato;
+}
+#Navlinks li a.active::after,
+#Navlinks li a:hover::after {
+  content: "";
+  width: 30%;
+  height: 2px;
+  background-color: tomato;
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+}
+#Navlinks.active
+{
+  right:0px;
+  color: white;
+}
+
+.hero
+{
+    background: url(img/about/banner.png);
+    height: 40vh;
+    width: 100%;
+    background-size: cover;
+    
+   padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+    color: white;
+    margin-top: 88px;
+    text-align: center;
+
+}
+
+.hero h2
+{
+  font-size: 40px;
+  margin-top: -15px;
+}
+.hero p
+{
+  margin-top: -25px;
+}
+#cart table
+{
+    width: 100%;
+}
+
+#cart table
+{
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  white-space: nowrap;
+  margin-top: 30px;
+}
+table img
+{
+  width: 70px;
+}
+table td
+{
+  width: 100px;
+  text-align: center;
+}
+table td:nth-child(5) input
+{
+  width: 40px;
+  padding: 10px;
+
+}
+table thead
+{
+  border: 1px solid gainsboro;
+  border-left: none;
+  border-right: none;
+}
+table thead td
+{
+  font-weight: 700;
+  text-transform: uppercase;
+}
+table tbody tr td
+{
+  padding-top: 25px;
+}
+table tbody{
+ font-size: 13px;
+
+}
+#cart-add
+{
+  padding: 40px;
+  display: flex;
+ 
+  justify-content: space-between;
+
+}
+#cart-add
+{
+  padding: 40px;
+  display: flex;
+ 
+  justify-content: center;
+
+}
+#subtotal
+{
+  width: 50%;
+  margin-bottom: 30px;
+  border: 1px solid gainsboro;
+  padding: 30px;
+  
+}
+#subtotal table
+{
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+#subtotal table td
+{
+  width: 50%;
+  border: 1px solid gainsboro;
+  padding: 10px;
+  font-size: 13px;
+}
+#subtotal button
+{
+  background-color: teal;
+  color: white;
+  padding: 12px 20px;
+}
+
+footer
+{
+  padding: 40px 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.col
+{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+footer h4
+{
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+footer p{
+  font-size: 13px;
+  margin-top: -5px;
+}
+footer a
+{
+  text-decoration: none;
+  font-size: 13px;
+  color:black;
+}
+.follow
+{
+  margin-top: -10px;
+}
+.f-icon
+{
+  margin-top: -15px;
+  color: grey;
+  cursor: pointer;
+}
+.row img
+{
+  border: 1px solid teal;
+  border-radius: 6px;
+  margin: 10px 0 15px 0;
+}
+.f-icon i:hover
+{
+  color: teal;
+
+}
+.col a:hover{
+  color: teal;
+}
+
+
+

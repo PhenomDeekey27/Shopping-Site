@@ -3,47 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
-    <link rel="stylesheet" href="shop.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="Cart.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <header>
+    <section id="header">
         <a href="#"><img src="./img/logo.png" alt="" class="logo" /></a>
         <div>
-            <ul id="Navlinks">
-              <li><a href="index.html" >Home</a></li>
-              <li><a href="shop.html" class="active">Shop</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li>
-                <a href="cart.html" id="lg-bag"><i class="fa-solid fa-bag-shopping"></i></a>
-              </li>
-            
-            </ul>
+          <ul id="Navlinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html" >Shop</a></li>
+          
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+              <a href="cart.html" id="lg-bag" class="active"><i class="fa-solid fa-bag-shopping"></i></a>
+            </li>
+            <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+          </ul>
         </div>
-    </header>
-
-    <section id="pro-details">
-
-    </section>
-
-    <section class="product-1">
-        <div class="product-container">
-
-        </div>
-
-    </section>
-    <section class="newsletter">
-        <div class="newstext">
-          <h4>Sign Up For Newsletters </h4>
-          <p>Get E-mail updates about out latest shop and <span style="color: goldenrod;">special offers</span></p>
-        </div>
-        <div class="form">
-          <input type="text" placeholder="Your Mail Address">
-          <button class="normal">Sign Up</button>
+        <div id="mobile">
+          <i id="bar" class="fas fa-outdent"></i>
+          <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
         </div>
       </section>
-    
+
+      <div class="hero">
+       
+        <h2>#stayHome</h2>
+       
+        <p>Save more with coupon & upto 70% 0ff!</p>
+       
+      </div>
+      <section id="cart">
+        <table>
+            <thead>
+                <tr>
+                    <td>Remove</td>
+                    <td>Image</td>
+                    <td>Product</td>
+                    <td>Price</td>
+                    <td>Quantity</td>
+                    <td>Subtotal</td>
+                </tr>
+                
+            </thead>
+            <tbody class="table-body">
+
+            </tbody>
+
+        </table>
+
+      </section>
+
+      <section id="cart-add">
+        <div id="subtotal">
+          <h3>Cart Totals</h3>
+          <table id="cart-table">
+          
+          </table>
+          <button class="normal" onclick="Checkout()">Proceed to checkout
+
+          </button>
+        </div>
+      </section>
+
       <footer>
         <div class="col">
           <img src="img/logo.png" alt="">
@@ -93,6 +117,6 @@
   
       </footer>
 
-    <script src="shop.js"></script>
+  <script src="Cart.js"></script>  
 </body>
 </html>

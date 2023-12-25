@@ -4,6 +4,24 @@ let searchValue;
 const search=document.getElementById("search");
 let productList=[];
 
+const bar=document.getElementById("bar")
+const navbar=document.getElementById("Navlinks");
+const mobile=document.getElementById("mobile");
+const close=document.getElementById("close");
+
+bar.addEventListener("click",()=>
+{
+   
+    navbar.classList.add("active");
+    mobile.style.display="none"
+});
+
+close.addEventListener('click',()=>
+{
+    navbar.classList.remove("active");
+    mobile.style.display='flex'
+})
+
 async function getProducts()
 {
     const response= await fetch(url);
@@ -19,6 +37,7 @@ async function getProducts()
 function DisplayProduct(datas)
 {
     productList=[...datas];
+    
    
 
    productList.map((products)=>
@@ -39,9 +58,10 @@ function DisplayProduct(datas)
     </div>
     <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a> `
     
-        product.onclick=()=>sendName(products.title)
+        product.onclick=()=>sendName(products.id)
     
          productContainer.appendChild(product)
+         
    })
 }
 
@@ -89,6 +109,8 @@ function handlechange()
 
     DisplayProduct(temp);
 }
+
+
 
 
 
