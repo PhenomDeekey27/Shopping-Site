@@ -4,6 +4,17 @@ let searchValue;
 const search=document.getElementById("search");
 let productList=[];
 
+window.onload=function()
+{
+    if(!("runbefore" in localStorage))
+    {
+        localStorage.clear();
+        localStorage.setItem("runbefore",true)
+    }
+    getProducts();
+}
+
+
 const bar=document.getElementById("bar")
 const navbar=document.getElementById("Navlinks");
 const mobile=document.getElementById("mobile");
