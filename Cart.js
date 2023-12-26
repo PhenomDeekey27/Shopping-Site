@@ -1,13 +1,3 @@
-const tableBody=document.querySelector(".table-body")
-
-let CartProducts=JSON.parse(localStorage.getItem("cart"));
-let finalProducts=[];
-finalProducts=[...CartProducts];
-localStorage.setItem("demo",JSON.stringify(finalProducts));
-
-let cost;
-let cart=document.getElementById("cart-table");
-let total=0;
 const bar=document.getElementById("bar")
 const navbar=document.getElementById("Navlinks");
 const mobile=document.getElementById("mobile");
@@ -18,6 +8,7 @@ bar.addEventListener("click",()=>
    
     navbar.classList.add("active");
     mobile.style.display="none"
+    
 });
 
 close.addEventListener('click',()=>
@@ -25,6 +16,19 @@ close.addEventListener('click',()=>
     navbar.classList.remove("active");
     mobile.style.display='flex'
 })
+
+
+const tableBody=document.querySelector(".table-body")
+
+let CartProducts=JSON.parse(localStorage.getItem("cart"));
+let finalProducts=[];
+finalProducts=[...CartProducts];
+localStorage.setItem("demo",JSON.stringify(finalProducts));
+
+let cost;
+let cart=document.getElementById("cart-table");
+let total=0;
+
 
 let lists=new Set();
 
