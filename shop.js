@@ -204,6 +204,7 @@ function DisplayCategory(datas)
 
 function AddCart(product)
 {
+    alert("Item added to Cart")
    finalPro.add(product)
     let cartItems=localStorage.getItem("cart");
     let data=[];
