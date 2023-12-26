@@ -182,6 +182,7 @@ function Checkout()
    localStorage.clear();
    cart.innerHTML="";
    window.location.href="cart.html"
+   alert("checkout Successful")
 
 }
 
