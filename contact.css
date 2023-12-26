@@ -18,6 +18,7 @@ body {
     left: 0;
     width: 100%;
     
+    
   }
   button.normal
 {
@@ -55,6 +56,7 @@ button.white
     position: fixed;
     top: 0;
     padding: 10px;
+    right: 0;
   }
   #Navlinks li {
     list-style: none;
@@ -72,16 +74,7 @@ button.white
 #Navlinks li a.active {
   color: tomato;
 }
-#Navlinks li a.active::after,
-#Navlinks li a:hover::after {
-  content: "";
-  width: 50%;
-  height: 2px;
-  background-color: tomato;
-  position: absolute;
-  bottom: 0;
-  left: 20px;
-}
+
 #Navlinks.active
 {
   right:0px;
@@ -268,55 +261,23 @@ footer a
 
 @media (max-width:799px)
 {
-  #Navlinks
+  .map iframe
   {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: fixed;
-    top: 0;
-    right: -300px;
-    width: 300px;
-    height: 100vh;
-    background-color: #e3e6f3;
-    margin: 0;
-    padding: 60px 5px;
-    transition: 0.3s;
-  }
-  #Navlinks li
-  {
-    margin-bottom: 7px;
-  }
-  #mobile
-  {
-    visibility: visible;
-    display: flex;
-    position: absolute;
-    align-items: center;
-    padding: 10px;
-    gap: 15px;
-    left: 500px;
-    color: black;
-  }
-  #mobile i
-  {
-    color: black;
+    width: 400px;
 
   }
-  #close
+  #form-details
   {
-    visibility: visible;
-    position: absolute;
-    top: 30px;
-    /* right: 100px; */
-    font-size: 25px;
-    left: 30px;
-    color: #222;
+    padding: 0;
   }
   #lg-bag
   {
-    display: none;
+    visibility: visible;
+    color: black;
+  }
+  #form-details form button
+  {
+    width: 30%;
   }
   .hero
   {
@@ -531,8 +492,17 @@ footer a
   width: 40%;
 }
 
-@media (max-width:799px)
+
+
+@media (max-width:499px)
 {
+  #header
+  {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px;
+  }
   #Navlinks
   {
     display: flex;
@@ -541,14 +511,20 @@ footer a
     justify-content: flex-start;
     position: fixed;
     top: 0;
-    right: -300px;
+    right: -400px;
     width: 300px;
     height: 100vh;
     background-color: #e3e6f3;
     margin: 0;
     padding: 60px 5px;
     transition: 0.3s;
+    
   }
+  #Navlinks.active
+  {
+    right: 0px !important;
+  }
+
   #Navlinks li
   {
     margin-bottom: 7px;
@@ -569,6 +545,12 @@ footer a
     color: black;
 
   }
+  #mobile
+  {
+    position: absolute;
+    left: 300px;
+
+  }
   #close
   {
     visibility: visible;
@@ -579,223 +561,48 @@ footer a
     left: 30px;
     color: #222;
   }
-  #lg-bag
-  {
-    display: none;
-  }
   .hero
   {
-    
-    height: 20vh;
-    background-position: top 30% right 30%;
-    padding: 0 80px;
-    width: 80vw;
-   
-  }
-  .features
-  {
-    display: grid;
-    grid-template-rows:1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
-    justify-content: center;
-   
-   
-  }
-  .feature-box
-  {
-    margin: 15px;
-   
-  }
-  .product-1
-  {
-    padding: 40px 40px;
-  }
-  .banner
-  {
-    height: 20vh;
-  }
-  .sm-banner
-  {
-    display: flex;
-    flex-direction: column;
-  }
-  .banner-box
-  {
-    height: 30vh;
-  }
-  .banner-3
-  {
-    display: flex;
-    flex-direction: column;
-  }
-  .banner-mini
-  {
-    height: 25vh;
-  }
-  .newsletter .form
-  {
-    width: 70%;
-  }
-  #about-app .video
-  {
-    width: 100%;
+    background-position: 80%;
+    padding: 3px 39px;
+
   }
 
-  #contact-details
+  #contact-details {
+    display: flex;
+    align-items: flex-start;
+    /* justify-content: space-between; */
+    padding: 40px;
+    flex-direction: column;
+}
+.map{
+  margin-left: -30px;
+}
+.map iframe
+{
+  width: 350px;
+}
+
+#form-details
 {
   display: flex;
   align-items: center;
-  /* padding: 40px; */
-  /* gap: 15%; */
   justify-content: center;
-  margin-left: -16%;
-
-
-}
-.details
-{
-  margin-left: -10%;
-}
-.map
-{
-  width: 20vw;
-}
-.map iframe
-{
-  width: 300px;
-}
-#form-details
-{
-  padding: 0;
-  margin-left:-12%;
-  justify-content: center;
-}
-#form-details form 
-{
-  width: 45%;
-}
-#form-details form .normal
-{
-  width: 100px;
-}
-}
-
-@media (max-width:499px)
-{
-  header
-  {
-    /* width: 200px; */
-    position: fixed;
-  }
-  #Navlinks
-  {
-    visibility: none;
-    position: fixed;
-  }
-  #mobile
-  {
-    position: absolute;
-    left: 300px;
-
-  }
-  .hero
-  {
-   background-position: 15%;
-   width: 60%;
-  }
-   
- .hero h2{
-    font-size: 30px;
-  }
-
- .hero h1
-  {
-    font-size: 35px;
-  }
-  .features
-  {
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    padding: 10px
-    
-  }
-  .feature-box
-  {
-    width: 100px;
-  }
-  .banner
-  {
-    width: 80vw;
-    padding: 30px;
-  }
-  .banner h2
-  {
-    font-size: 20px;
-  }
-  .banner-box
-  {
-    min-width: 200px;
-    height: 20vh;
-  }
-  .banner-box h2
-  {
-    font-size: 20px;
-  }
-  .form 
-  {
-    margin-left: -40px;
-    width: 100%;
-    padding: 10px;
-   
-  }
-  .newsletter input
-  {
-    width: 100px;
-    margin-left: -25px;
-    font-size: 10px;
-  }
-  #about-app .video
-  {
-    width: 100%;
-  }
-  #about-head {
-   
-    flex-direction: column;
-}
-#about-head img
-{
-  width: 100%;
-}
-#contact-details
-{
   flex-direction: column;
 }
-.map
-{
-  width: 100%;
-}
-.details
-{
-  margin-left: 19%;
-  width: 100%;
-}
-.map iframe
-{
-  width: 400px;
-  margin-left: 22px;
-}
-#form-details
-{
-  margin: 10px;
-    padding: 30px 10px;
-    flex-wrap: wrap;
-}
-#form-details-form
-{
-  width: 100%;
-}
+#form-details form,#form-details form button
 
+{
+  width: 100%;
+}
+.newsletter .form{
+  width: 100%;
+  justify-content: center;
+}
+.newsletter .form input
+{
+  width: 130px;
+}
 
 
   

@@ -433,16 +433,7 @@ footer a
 #Navlinks li a.active {
   color: tomato;
 }
-#Navlinks li a.active::after,
-#Navlinks li a:hover::after {
-  content: "";
-  width: 40;
-  height: 2px;
-  background-color: tomato;
-  position: absolute;
-  bottom: 0;
-  left: 20px;
-}
+
 #Navlinks.active
 {
   right:0px;
@@ -451,73 +442,22 @@ footer a
 
 @media (max-width:799px)
 {
-  body
-  {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  header
-  {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 80px;
-    background-color: #e3e6f3;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
-    z-index: 999;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-   
-  }
+ 
+  
  #Navlinks
  {
   display: flex;
-    flex-direction: column;
-   
-    justify-content: flex-start;
-    position: fixed;
-    top: 0;
-    right: -400px;
-    width: 300px;
-    height: 100vh;
-    background-color: #e3e6f3;
-    margin: 0;
-    padding: 60px 5px;
-    transition: 0.3s
+  position: fixed;
+  top: 0;
+  
+  background-color: #e3e6f3;
+  transition: 0.3s;
+  padding: 10px;
  }
 
  #Navlinks li
  {
    margin-bottom: 7px;
- }
- #mobile
- {
-   visibility: visible;
-   display: flex;
-   position: absolute;
-   align-items: center;
-   padding: 10px;
-   gap: 15px;
-   left: 500px;
-   color: black;
- }
- #mobile i
- {
-   color: black;
-
- }
- #close
- {
-   visibility: visible;
-   position: absolute;
-   top: 30px;
-   /* right: 100px; */
-   font-size: 25px;
-   left: 30px;
-   color: #222;
  }
 
  .hero
@@ -547,6 +487,160 @@ footer a
   
 
 }
+
+@media (max-width:499px)
+{
+  header
+  {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  #Navlinks
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 300px;
+    height: 100vh;
+    background-color: #e3e6f3;
+    margin: 0;
+    padding: 60px 5px;
+    transition: 0.3s;
+    
+  }
+  #Navlinks.active
+  {
+    right: -40% !important;
+  }
+
+  #Navlinks li
+  {
+    margin-bottom: 7px;
+  }
+  #mobile
+  {
+    visibility: visible;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    padding: 10px;
+    gap: 15px;
+    left: 500px;
+    color: black;
+  }
+  #mobile i
+  {
+    color: black;
+
+  }
+  #mobile
+  {
+    position: absolute;
+    left: 300px;
+
+  }
+  #close
+  {
+    visibility: visible;
+    position: absolute;
+    top: 30px;
+    /* right: 100px; */
+    font-size: 25px;
+    left: 30px;
+    color: #222;
+  }
+
+  .hero
+  {
+    padding: 0 20px;
+    background-position:80%;
+  }
+   
+ .hero h2{
+    font-size: 30px;
+  }
+
+ .hero h1
+  {
+    font-size: 35px;
+  }
+
+  .features
+  {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    padding: 10px
+    
+  }
+  .feature-box
+  {
+    width: 100px;
+  }
+  .search
+  {
+    width: 90%;
+  }
+  .product-container
+  {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+  }
+  .product
+  {
+    width: 10%;
+    min-width: 140px;
+    padding: 10px 12px;
+    border: 1px solid grey;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 15px;
+    transition: 0.4 ease;
+    position: relative;
+  }
+  .product img{
+    height: 250px;
+  }
+  .banner
+  {
+    width: 80vw;
+    padding: 30px;
+  }
+  .banner h2
+  {
+    font-size: 20px;
+  }
+  .banner-box
+  {
+    min-width: 200px;
+    height: 20vh;
+  }
+  .banner-box h2
+  {
+    font-size: 20px;
+  }
+
+  .form 
+  {
+    margin-left: -40px;
+    width: 100%;
+    padding: 10px;
+   
+  }
+  .newsletter input
+  {
+    width: 100px;
+    margin-left: -25px;
+    font-size: 10px;
+  }
+  
+}
+
 
 
 
