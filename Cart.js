@@ -4,7 +4,7 @@ let CartProducts=JSON.parse(localStorage.getItem("cart"));
 let finalProducts=[];
 finalProducts=[...CartProducts];
 localStorage.setItem("demo",JSON.stringify(finalProducts));
-console.log(finalProducts)
+
 let cost;
 let cart=document.getElementById("cart-table");
 let total=0;
@@ -49,7 +49,7 @@ function Additems(productList)
                             <td><img src=${items.thumbnail} alt=""></td>
                             <td>${items.title}</td>
                             <td class="original">$${items.price}</td>
-                            <td><input type="number" value="1" class="cart-input" onchange=handleprice()></td>
+                            <td><input type="number" value="1" class="cart-input" onchange=handleprice() ></td>
                             <td class="finalprice">${items.price}</td>
             
             `;
@@ -87,22 +87,31 @@ function Additems(productList)
 }
 window.onload=(Additems(CartProducts))
 
+function print()
+{
+  console.log("print")
+}
 
 
-const cartInput=document.querySelector(".cart-input");
-let Default=cartInput.defaultValue;
-let finalList=document.querySelector(".finalprice");
 
 
-cartInput.oninput=()=>handleprice()
-cartInput.onfocus=()=>console.log("true");
+
+
+// cartInput.oninput=()=>handleprice()
+
+
 function handleprice()
 {
+      const cartInput=document.querySelector(".cart-input");
+    let Default=cartInput.defaultValue;
+    let finalList=document.querySelector(".finalprice");
    const finalprice=parseInt((document.querySelector(".finalprice").textContent),10);
    let cartValue=cartInput.value;
+  
    
  let price=document.querySelector(".original").textContent;
  let prices=parseInt(price.substring(1),10);
+ console.log(finalprice,cartValue,prices)
  let correctedPrice;
 
    if(cartValue===0)
@@ -164,7 +173,7 @@ function Remove(ind)
    cart.innerHTML="";
 
 
-   console.log(arr);
+ 
  
 }
 

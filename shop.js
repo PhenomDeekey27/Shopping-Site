@@ -80,9 +80,7 @@ if(product!=null){
     SingleProduct();
 }else
 {
-
     RandomProducts();
-  
 
 }
 
@@ -206,12 +204,7 @@ function DisplayCategory(datas)
 
 function AddCart(product)
 {
-   
-  
-
-    finalPro.add(product);
- 
-    console.log(finalPro);
+   finalPro.add(product)
     let cartItems=localStorage.getItem("cart");
     let data=[];
     if(cartItems)
